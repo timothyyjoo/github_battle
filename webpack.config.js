@@ -22,7 +22,7 @@ module.exports = {
   devServer:  {
     historyApiFallback:true
   },
-  mode: 'development',
+  mode: process.env.node_ENV === 'production' ? 'production' : 'development',
   plugins: [
     new HtmlWebpackPlugin({
       template: 'app/index.html'
